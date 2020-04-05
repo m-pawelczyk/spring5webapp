@@ -5,6 +5,10 @@ import org.hibernate.annotations.GeneratorType;
 import javax.persistence.*;
 import java.util.Set;
 
+/* m-pawelczyk (GitHub) / m_pawelczyk (Twitter)
+ *  created Author on 04.04.2020
+ *  inside the package - guru.springframework.spring5webapp.domain in project spring5webapp
+ */
 @Entity
 public class Author {
     @Id

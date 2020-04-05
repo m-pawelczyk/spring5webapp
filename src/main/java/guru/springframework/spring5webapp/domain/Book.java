@@ -3,6 +3,10 @@ package guru.springframework.spring5webapp.domain;
 import javax.persistence.*;
 import java.util.Set;
 
+/* m-pawelczyk (GitHub) / m_pawelczyk (Twitter)
+ *  created Book on 04.04.2020
+ *  inside the package - guru.springframework.spring5webapp.domain in project spring5webapp
+ */
 @Entity
 public class Book {
     @Id
