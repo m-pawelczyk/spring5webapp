@@ -1,9 +1,8 @@
 package guru.springframework.spring5webapp.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 /* m-pawelczyk (GitHub) / m_pawelczyk (Twitter)
  *  created Publisher on 05.04.2020
@@ -19,6 +18,9 @@ public class Publisher {
     private String city;
     private String state;
     private String zip;
+
+    @OneToMany
+    private Set<Book> bookSet = new HashSet<>();
 
     public Publisher() {
     }
@@ -78,6 +80,14 @@ public class Publisher {
 
     public void setZip(String zip) {
         this.zip = zip;
+    }
+
+    public Set<Book> getBookSet() {
+        return bookSet;
+    }
+
+    public void setBookSet(Set<Book> bookSet) {
+        this.bookSet = bookSet;
     }
 
     @Override

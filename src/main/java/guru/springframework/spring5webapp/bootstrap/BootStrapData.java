@@ -3,9 +3,9 @@ package guru.springframework.spring5webapp.bootstrap;
 import guru.springframework.spring5webapp.domain.Author;
 import guru.springframework.spring5webapp.domain.Book;
 import guru.springframework.spring5webapp.domain.Publisher;
-import guru.springframework.spring5webapp.repository.AuthorRepository;
-import guru.springframework.spring5webapp.repository.BookRepository;
-import guru.springframework.spring5webapp.repository.PublisherRepository;
+import guru.springframework.spring5webapp.repositories.AuthorRepository;
+import guru.springframework.spring5webapp.repositories.BookRepository;
+import guru.springframework.spring5webapp.repositories.PublisherRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -29,6 +29,9 @@ public class BootStrapData implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
+        Publisher czarne = new Publisher("Wydawnictwo Czarne", "Nowy Świat", "Warszawa", "mazowieckie", "20-200");
+        publisherRepository.save(czarne);
+
         Author sabela = new Author("Bartek", "Sabela");
         Book mmw = new Book("Może morze wróci", "111111");
         sabela.getBooks().add(mmw);
@@ -44,10 +47,6 @@ public class BootStrapData implements CommandLineRunner {
 
         authorRepository.save(tokarczuk);
         bookRepository.save(bieguni);
-
-        Publisher czarne = new Publisher("Wydawnictwo Czarne", "Nowy Świat", "Warszawa", "mazowieckie", "20-200");
-        publisherRepository.save(czarne);
-
 
         System.out.println("Started in Bootstrap");
         System.out.println("Number of Authors: " + authorRepository.count());
