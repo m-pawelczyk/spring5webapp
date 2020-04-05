@@ -20,6 +20,9 @@ public class Book {
             joinColumns = @JoinColumn(name = "book_id"), inverseJoinColumns = @JoinColumn(name = "author_id"))
     private Set<Author> authors;
 
+    public Book() {
+    }
+
     public Book(Long id, String title, String isbn, Set<Author> authors) {
         this.id = id;
         this.title = title;
